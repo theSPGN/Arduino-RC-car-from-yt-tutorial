@@ -1,6 +1,10 @@
 #include <AFMotor.h>
 #include <Servo.h>
 
+//Following code is expanded version of code from:
+//https://www.youtube.com/watch?v=Q36NbjPMV5k
+//Basically I added servos
+
 Servo myservo1;
 Servo myservo2;
 Servo myservo3;
@@ -10,10 +14,12 @@ int pos2=130;
 int pos3=123;
 int pos4=90;
 
+//https://www.youtube.com/watch?v=Q36NbjPMV5k ->
 AF_DCMotor motor1(1, MOTOR12_1KHZ); 
 AF_DCMotor motor2(2, MOTOR12_1KHZ); 
 AF_DCMotor motor3(3, MOTOR34_1KHZ);
 AF_DCMotor motor4(4, MOTOR34_1KHZ);
+//<-
 
 char command; 
 
@@ -103,6 +109,8 @@ void goup2(){
   delay(20);
             }
 
+
+//https://www.youtube.com/watch?v=Q36NbjPMV5k ->
 void forward()
 {
   motor1.setSpeed(255); //Define maximum velocity
@@ -162,3 +170,4 @@ void Stop()
   motor4.setSpeed(0); //Define minimum velocity
   motor4.run(RELEASE); //stop the motor when release the button
 }
+//<-
